@@ -13,6 +13,7 @@ function TodoApp() {
   const AddTodo = () => {
     if (inputValue.trim() !== '') {
       if (editingIndex === -1) {
+        console.log(editingIndex);
         // Add new todo
         setTodos((prevTodos) => [...prevTodos, inputValue]);
       } else {

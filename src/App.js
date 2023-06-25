@@ -17,6 +17,12 @@
 
 // import Nav from './Nav';
 import User from './gituser/User';
+import Hello from './classcomponent/Hello';
+import TodoApp from './TodoApp/MainTodo';
+import TimerApp2 from './Timerapp/Timer2';
+import Drop from './Useref/Drop';
+import Index from './Malefemale';
+import PollingApp from './Polling/Polling';
 
 function App() {
   // // function fn(){
@@ -60,7 +66,8 @@ function App() {
           {/* <A/> */}
           {/* <Nav isLoggedIn={isLoggedIn} logout={logout} />
           {isLoggedIn ? <Home/>: <Login login={login}/>} */}
-          <User/> 
+          {/* <Hello name="aman"/>  */}
+          <PollingApp/>
 
     </div>
 
