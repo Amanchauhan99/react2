@@ -16,13 +16,14 @@
 
 
 // import Nav from './Nav';
-import User from './gituser/User';
-import Hello from './classcomponent/Hello';
-import TodoApp from './TodoApp/MainTodo';
-import TimerApp2 from './Timerapp/Timer2';
-import Drop from './Useref/Drop';
-import Index from './Malefemale';
-import PollingApp from './Polling/Polling';
+// import User from './gituser/User';
+// import Hello from './classcomponent/Hello';
+// import TodoApp from './TodoApp/MainTodo';
+// import TimerApp2 from './Timerapp/Timer2';
+// import Drop from './Useref/Drop';
+// import Index from './Malefemale';
+// import PollingApp from './Polling/Polling';
+import Movie from './MovieApp/Movie';
 
 function App() {
   // // function fn(){
@@ -67,7 +68,7 @@ function App() {
           {/* <Nav isLoggedIn={isLoggedIn} logout={logout} />
           {isLoggedIn ? <Home/>: <Login login={login}/>} */}
           {/* <Hello name="aman"/>  */}
-          <PollingApp/>
+          <Movie/>
 
     </div>
 

@@ -44,7 +44,7 @@ const PollingApp = () => {
             <tr key={post.objectID}>
               <td>{post.title}</td>
               <td>
-                <a href={post.url}>{post.url}</a>
+                <a href={post.url}>{post.url}</a> 
               </td>
               <td>{post.created_at}</td>
               <td>{post.author}</td>
