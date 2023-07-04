@@ -157,6 +157,10 @@ import Moviesdetails from './MovieApp/MovieDetail';
 import { myContext } from './MovieApp/Context';
 // import TopRated from './component/TopRated';
 import Movies from './MovieApp/Movie';
+import Resume from './MDNresume/Resume';
+import Card from './Card/Card';
+import Home from './Assignment5/Home';
+import UI from './Assignment6/UI';
 
 
 
@@ -165,10 +169,10 @@ function App() {
   return (
 
     <div className="App">
-    <Routes>
+    {/* /* <Routes>
+ */}
 
-
-    <Route path='/' element={<Movies/>}/>
+    {/* <Route path='/' element={<Movies/>}/> */}
         {/* <Route path='' element={<Navigate to='toprated'/>}/> 
         <Route path='toprated' element={login ? <TopRated/> : <Login/> }/>
         <Route path='allmovies' element={login ? <Allmovies/> : <Login /> }/>
@@ -177,10 +181,10 @@ function App() {
         <Route path='drama' element={login ?<Drama/>: <Login />}/> */}
 
 
-    <Route path="/MoviedetailPage/:id" element={ <Moviesdetails/>}/>
-  </Routes> 
-
-
+    {/* /* <Route path="/MoviedetailPage/:id" element={ <Moviesdetails/>}/> */
+  /* </Routes>   */}
+<UI/>
+ 
   </div>
   );
 };

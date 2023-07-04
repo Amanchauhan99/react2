@@ -2,6 +2,8 @@ import React, { useState, useEffect } from 'react';
 import axios from 'axios';
 
 const ProductPage = ({ handleAddToCart }) => {
+   
+    
   const [products, setProducts] = useState([]);
 
   useEffect(() => {
