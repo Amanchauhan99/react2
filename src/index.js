@@ -9,15 +9,16 @@ import { ChakraProvider } from '@chakra-ui/react';
 import { BrowserRouter } from 'react-router-dom';
 import SendingContext from './MovieApp/Context';
 // import 'bootstrap/dist/css/bootstrap.min.css';
+import { myStore } from './Store/Store';
 
 const root = ReactDOM.createRoot(document.getElementById('root'));
 root.render(
 
-  <BrowserRouter>
-<SendingContext>
-<App />
-</SendingContext>
-</BrowserRouter>
+  <Provider store={myStore}>
+    <BrowserRouter>
+      <App />
+    </BrowserRouter>
+  </Provider>
 
 
 );

@@ -159,10 +159,16 @@ import { myContext } from './MovieApp/Context';
 import Movies from './MovieApp/Movie';
 import Resume from './MDNresume/Resume';
 import Card from './Card/Card';
-import Home from './Assignment5/Home';
+// import Home from './Assignment5/Home';
 import UI from './Assignment6/UI';
 import A from './Context2/A';
 import LearnWebDev from './Webdevelopment/LearnWebDevelopment';
+import { Home } from './assignment19/Homepage';
+import { Navbar } from './NavBar/NavBar';
+import Product from './assignment19/Product';
+// import Product from './assignment19/Products';
+import { Cart } from './assignment19/CartPage';
+// import Productpage from './assignment19/ProductPage'
 
 
 
@@ -185,7 +191,12 @@ function App() {
 
     {/* /* <Route path="/MoviedetailPage/:id" element={ <Moviesdetails/>}/> */
   /* </Routes>   */}
-<LearnWebDev/>
+ <Navbar/>
+        <Routes>
+          <Route path='/' element={<Home /> } />
+          <Route path='/products' element={<Product /> } />
+          <Route path='/cart' element={<Cart /> } />
+        </Routes>
  
   </div>
   );

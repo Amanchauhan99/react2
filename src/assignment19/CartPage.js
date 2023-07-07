@@ -1,33 +1,64 @@
-import React, { useState } from 'react';
+import React from "react";
+import { useDispatch, useSelector } from "react-redux";
+import './Cart.css'
 
-const CartPage = () => {
-  const [cartItems, setCartItems] = useState([]);
+export const Cart = ()=>{
+    const cart = useSelector((storeData)=>{
+        return storeData.cart;
+    })
+    const dispatch = useDispatch()
 
-  const handleAddToCart = (product) => {
-    setCartItems([...cartItems, product]);
-  };
-
-  const handleRemoveItem = (productId) => {
-    setCartItems(cartItems.filter(item => item.id !== productId));
-  };
-
-  return (
-    <div>
-      <h1>Add to Cart</h1>
-      {/* Display cart items */}
-      <div className="card-container">
-        {cartItems.map(item => (
-          <div key={item.id} className="card">
-            <img src={item.image} alt={item.title} />
-            <h3>{item.title}</h3>
-            <p>Price: ${item.price}</p>
-            <p>Category: {item.category}</p>
-            <button onClick={() => handleRemoveItem(item.id)}>Remove Item</button>
-          </div>
-        ))}
-      </div>
+    const handleRemoveCart = (id) => {
+        dispatch({
+          type: "removecart",
+          payload: id,
+        });
+    };
+    const handleIncrease = (id)=>{
+        dispatch({
+            type: "increaseQuantity",
+            payload:id
+        })
+    }
+    const handleDecrease = (id)=>{
+        dispatch({
+            type: "decreaseQuantity",
+            payload:id
+        })
+    }
+    return <div>
+        <div className="cartitems">
+        <h2>My Cart</h2>
+        {
+            cart?.map((ele,idx)=>{
+                return <div className="cartitem" key={idx}>
+                        <img src={ele.image} alt="#" height={"60px"} width={"50px"}/>
+                        <h4 className="title">{ele.title.slice(0,50)}</h4>
+                        <p className="price">$ {ele.price}</p>
+                        <button onClick={()=>handleRemoveCart(ele.id)} className="removecartbtn">Remove</button>
+                        <div className="quantitydiv">
+                            <button className="decreaseBtn" onClick={()=>{
+                                if(ele.quantity !== 1){
+                                    handleDecrease(ele.id)
+                                }else{
+                                    handleRemoveCart(ele.id)
+                                }
+                            }}>-</button>
+                            <button className="quantityBtn">{ele.quantity}</button>
+                            <button className="increaseBtn" onClick={()=>handleIncrease(ele.id)}>+</button>
+                        </div>
+                </div>
+            })
+        }
+        <div>
+            <h4 style={{color:"tomato"}}>Total $ 
+                {
+                    cart.reduce((total,curr)=>{
+                        return total + curr.quantity*curr.price;
+                    },0).toFixed(2)
+                }
+            </h4>
+        </div>
+        </div>
     </div>
-  );
-};
-
-export default CartPage;
+}
