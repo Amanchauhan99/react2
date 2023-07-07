@@ -10,15 +10,18 @@ import { BrowserRouter } from 'react-router-dom';
 import SendingContext from './MovieApp/Context';
 // import 'bootstrap/dist/css/bootstrap.min.css';
 import { myStore } from './Store/Store';
+import CustomProvider from './Assignment18/Context';
 
 const root = ReactDOM.createRoot(document.getElementById('root'));
 root.render(
 
-  <Provider store={myStore}>
-    <BrowserRouter>
-      <App />
-    </BrowserRouter>
-  </Provider>
+  // <Provider store={myStore}>
+  //   <BrowserRouter>
+  //     <App />
+  //   </BrowserRouter>
+  // </Provider>
+
+  <CustomProvider> <App /></CustomProvider>
 
 
 );

@@ -154,7 +154,7 @@
 import './App.css';
 import { Routes,Route,Navigate} from 'react-router-dom';
 import Moviesdetails from './MovieApp/MovieDetail';
-import { myContext } from './MovieApp/Context';
+// import { myContext } from './MovieApp/Context';
 // import TopRated from './component/TopRated';
 import Movies from './MovieApp/Movie';
 import Resume from './MDNresume/Resume';
@@ -163,16 +163,20 @@ import Card from './Card/Card';
 import UI from './Assignment6/UI';
 import A from './Context2/A';
 import LearnWebDev from './Webdevelopment/LearnWebDevelopment';
-import { Home } from './assignment19/Homepage';
-import { Navbar } from './NavBar/NavBar';
+import Home from './Assignment18/Home';
+import Navbar from './Assignment18/NavBar';
+import Login from './Assignment18/Login';
 import Product from './assignment19/Product';
 // import Product from './assignment19/Products';
 import { Cart } from './assignment19/CartPage';
 // import Productpage from './assignment19/ProductPage'
+import { useContext } from 'react';
+import mycontext from './Assignment18/Context';
 
 
 
 function App() {
+  const {loggedIn} = useContext(mycontext);
   // const { login } = useContext(myContext);
   return (
 
@@ -191,15 +195,26 @@ function App() {
 
     {/* /* <Route path="/MoviedetailPage/:id" element={ <Moviesdetails/>}/> */
   /* </Routes>   */}
- <Navbar/>
+ {/* <Navbar/>
         <Routes>
           <Route path='/' element={<Home /> } />
           <Route path='/products' element={<Product /> } />
           <Route path='/cart' element={<Cart /> } />
         </Routes>
  
+  </div> */}
+
+{loggedIn ? (
+      <div>
+        <Navbar />
+        <Home />
+      </div>
+    ) : (
+      <Login />
+    )}
   </div>
   );
+  
 };
 
 // const Navbar = () => {
