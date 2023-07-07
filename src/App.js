@@ -161,6 +161,8 @@ import Resume from './MDNresume/Resume';
 import Card from './Card/Card';
 import Home from './Assignment5/Home';
 import UI from './Assignment6/UI';
+import A from './Context2/A';
+import LearnWebDev from './Webdevelopment/LearnWebDevelopment';
 
 
 
@@ -183,7 +185,7 @@ function App() {
 
     {/* /* <Route path="/MoviedetailPage/:id" element={ <Moviesdetails/>}/> */
   /* </Routes>   */}
-<UI/>
+<LearnWebDev/>
  
   </div>
   );
